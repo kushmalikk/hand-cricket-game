@@ -55,6 +55,10 @@ class _MyHomePageState extends State<MyHomePage> {
         aiTurn = true;
       } else {
         userScore += userSelected;
+        if (userScore > aiScore && aiOut) {
+          aiOut = true;
+          aiTurn = false;
+        }
       }
     });
   }
@@ -74,6 +78,10 @@ class _MyHomePageState extends State<MyHomePage> {
         aiTurn = false;
       } else {
         aiScore += aiBat;
+        if (aiScore > userScore && userOut) {
+          aiOut = true;
+          aiTurn = false;
+        }
       }
     });
   }
